@@ -1,0 +1,3 @@
+node_modules/
+.ai-workflow-designer/output/
+*.tgz

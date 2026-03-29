@@ -1,0 +1,447 @@
+{
+  "person": {
+    "name": "Jen Weigel",
+    "role": "Program manager and chief-of-staff style operator for AI enablement",
+    "team": "AI Enablement + Implementation",
+    "goal": "Understand my work and find AI leverage"
+  },
+  "workPatterns": [
+    {
+      "id": "synthesis-and-briefing",
+      "title": "Synthesis and Briefing",
+      "count": 5,
+      "evidence": [
+        "KR 3.1 portfolio integration",
+        "Agentic Audience standup",
+        "Monthly AI transformation narrative",
+        "Task and accountability operations",
+        "Daily ops and triage"
+      ]
+    },
+    {
+      "id": "monitoring-and-signal-detection",
+      "title": "Monitoring and Signal Detection",
+      "count": 5,
+      "evidence": [
+        "KR 3.1 portfolio integration",
+        "Agentic Audience standup",
+        "Monthly AI transformation narrative",
+        "Task and accountability operations",
+        "Daily ops and triage"
+      ]
+    },
+    {
+      "id": "coordination-and-follow-through",
+      "title": "Coordination and Follow-Through",
+      "count": 4,
+      "evidence": [
+        "KR 3.1 portfolio integration",
+        "Agentic Audience standup",
+        "Task and accountability operations",
+        "Daily ops and triage"
+      ]
+    },
+    {
+      "id": "meetings-and-operating-rhythm",
+      "title": "Meetings and Operating Rhythm",
+      "count": 3,
+      "evidence": [
+        "Agentic Audience standup",
+        "Monthly AI transformation narrative",
+        "Task and accountability operations"
+      ]
+    },
+    {
+      "id": "stakeholder-communications",
+      "title": "Stakeholder Communications",
+      "count": 2,
+      "evidence": [
+        "Agentic Audience standup",
+        "Monthly AI transformation narrative"
+      ]
+    }
+  ],
+  "responsibilities": [
+    {
+      "title": "KR 3.1 portfolio integration",
+      "outcome": "Clear, current portfolio view with blockers, support needs, and credible impact signals.",
+      "cadence": "Weekly plus monthly aggregation cycle",
+      "triggers": [
+        "Monthly cycle start",
+        "Workflow owner updates",
+        "Leadership status asks"
+      ],
+      "inputs": [
+        "Workflow owner updates",
+        "Tracker documents",
+        "Standups",
+        "Pilot results"
+      ],
+      "outputs": [
+        "Status brief",
+        "Risk summary",
+        "Decision framing"
+      ],
+      "stakeholders": [
+        "Hans",
+        "Annie",
+        "Workflow owners"
+      ],
+      "decisions": [
+        "Continue or pivot decisions",
+        "Escalation timing"
+      ],
+      "painPoints": [
+        "Inconsistent update quality",
+        "Missing success measures",
+        "Needs repeated nudges"
+      ],
+      "humanRoleLeft": "Challenge weak logic, make tradeoffs, and approve external framing.",
+      "tags": [
+        "program",
+        "status",
+        "coordination",
+        "briefing",
+        "monitor"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 4,
+      "coordinationLoad": 5,
+      "artifactStructure": 4,
+      "notes": "Strong candidate for aggregation and monitoring assistance.",
+      "leverage": {
+        "score": 60,
+        "band": "Medium",
+        "mode": "assist-first",
+        "recommendation": "Use AI to reduce prep, aggregation, and coordination load, but leave synthesis and decision framing with the human.",
+        "dimensions": {
+          "repeatability": 5,
+          "judgmentIntensity": 4,
+          "coordinationLoad": 5,
+          "artifactStructure": 4
+        }
+      }
+    },
+    {
+      "title": "Agentic Audience standup",
+      "outcome": "Cross-workstream progress is visible and blockers surface before they stall momentum.",
+      "cadence": "Weekly recurring standup",
+      "triggers": [
+        "Monday standup cycle",
+        "Owner updates",
+        "Cross-workstream overlaps"
+      ],
+      "inputs": [
+        "Standup doc",
+        "Owner updates",
+        "Prior commitments"
+      ],
+      "outputs": [
+        "Standup pre-read",
+        "Action-item tracker",
+        "Escalation notes"
+      ],
+      "stakeholders": [
+        "Wendy",
+        "Workstream owners",
+        "Hans"
+      ],
+      "decisions": [
+        "What to challenge",
+        "What to escalate"
+      ],
+      "painPoints": [
+        "Repeated yellow status",
+        "Uneven updates",
+        "Commitments that do not advance"
+      ],
+      "humanRoleLeft": "Facilitate the live conversation and decide where to push.",
+      "tags": [
+        "meeting",
+        "coordination",
+        "follow-up",
+        "program"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 3,
+      "coordinationLoad": 5,
+      "artifactStructure": 4,
+      "notes": "Ideal for pre-read assembly and post-meeting carry-forward.",
+      "leverage": {
+        "score": 66,
+        "band": "High",
+        "mode": "automate-or-delegate",
+        "recommendation": "This is a strong candidate for end-to-end AI support with a light approval gate.",
+        "dimensions": {
+          "repeatability": 5,
+          "judgmentIntensity": 3,
+          "coordinationLoad": 5,
+          "artifactStructure": 4
+        }
+      }
+    },
+    {
+      "title": "Monthly AI transformation narrative",
+      "outcome": "Leadership gets a crisp story about progress and the behaviors worth reinforcing.",
+      "cadence": "Monthly",
+      "triggers": [
+        "Monthly narrative cycle",
+        "Source syntheses ready",
+        "Leadership communication window"
+      ],
+      "inputs": [
+        "Meeting syntheses",
+        "Program data",
+        "Freeform notes"
+      ],
+      "outputs": [
+        "Leadership narrative",
+        "Talking points",
+        "Persona review notes"
+      ],
+      "stakeholders": [
+        "Annie",
+        "Hans",
+        "Yuri"
+      ],
+      "decisions": [
+        "What behaviors to highlight",
+        "What asks to include"
+      ],
+      "painPoints": [
+        "Need to combine disparate signals",
+        "Tone calibration across audiences",
+        "Tight polish window"
+      ],
+      "humanRoleLeft": "Own final narrative framing, audience judgment, and final polish.",
+      "tags": [
+        "narrative",
+        "briefing",
+        "stakeholder",
+        "communication"
+      ],
+      "repeatability": 4,
+      "judgmentIntensity": 5,
+      "coordinationLoad": 3,
+      "artifactStructure": 4,
+      "notes": "High-value drafting support, but never fully autonomous.",
+      "leverage": {
+        "score": 39,
+        "band": "Low",
+        "mode": "human-led",
+        "recommendation": "Keep human-led. Use AI for note cleanup or targeted research only.",
+        "dimensions": {
+          "repeatability": 4,
+          "judgmentIntensity": 5,
+          "coordinationLoad": 3,
+          "artifactStructure": 4
+        }
+      }
+    },
+    {
+      "title": "Cohort-based AI acceleration design",
+      "outcome": "A repeatable model exists for helping teams adopt AI in a structured way.",
+      "cadence": "Design phase with ad hoc working sessions",
+      "triggers": [
+        "Need for scalable alternative",
+        "Planning cycles",
+        "Readiness signals"
+      ],
+      "inputs": [
+        "Tiger team learnings",
+        "Maturity assessments",
+        "Capacity signals"
+      ],
+      "outputs": [
+        "Operating model draft",
+        "Intake criteria",
+        "Pilot plan"
+      ],
+      "stakeholders": [
+        "Hans",
+        "Wendy",
+        "Engineering partners"
+      ],
+      "decisions": [
+        "Model design",
+        "Scope and cohort selection"
+      ],
+      "painPoints": [
+        "No precedent",
+        "Need to balance breadth versus depth",
+        "High ambiguity"
+      ],
+      "humanRoleLeft": "Keep strategic design, selection criteria, and readiness calls human-led.",
+      "tags": [
+        "design",
+        "planning",
+        "strategy",
+        "model"
+      ],
+      "repeatability": 2,
+      "judgmentIntensity": 5,
+      "coordinationLoad": 3,
+      "artifactStructure": 2,
+      "notes": "Assist-first only during early design.",
+      "leverage": {
+        "score": 21,
+        "band": "Low",
+        "mode": "human-led",
+        "recommendation": "Keep human-led. Use AI for note cleanup or targeted research only.",
+        "dimensions": {
+          "repeatability": 2,
+          "judgmentIntensity": 5,
+          "coordinationLoad": 3,
+          "artifactStructure": 2
+        }
+      }
+    },
+    {
+      "title": "Task and accountability operations",
+      "outcome": "Nothing falls through the cracks and follow-through is visible across the portfolio.",
+      "cadence": "Daily and per-meeting",
+      "triggers": [
+        "New action items",
+        "Stale work",
+        "Standup cycle"
+      ],
+      "inputs": [
+        "Meeting notes",
+        "Quick captures",
+        "Project boards"
+      ],
+      "outputs": [
+        "Tracked issues",
+        "Overdue summaries",
+        "Follow-up nudges"
+      ],
+      "stakeholders": [
+        "Jen",
+        "Wendy",
+        "DRIs"
+      ],
+      "decisions": [
+        "Priority assignment",
+        "Where work belongs"
+      ],
+      "painPoints": [
+        "Vague ownership",
+        "Missing due dates",
+        "Manual status hygiene"
+      ],
+      "humanRoleLeft": "Approve creation, prioritize, and handle sensitive escalation moments.",
+      "tags": [
+        "ops",
+        "follow-up",
+        "tracking",
+        "coordination"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 2,
+      "coordinationLoad": 4,
+      "artifactStructure": 5,
+      "notes": "Best end-to-end automation candidate in the set.",
+      "leverage": {
+        "score": 71,
+        "band": "High",
+        "mode": "automate-or-delegate",
+        "recommendation": "This is a strong candidate for end-to-end AI support with a light approval gate.",
+        "dimensions": {
+          "repeatability": 5,
+          "judgmentIntensity": 2,
+          "coordinationLoad": 4,
+          "artifactStructure": 5
+        }
+      }
+    },
+    {
+      "title": "Daily ops and triage",
+      "outcome": "The day starts with a tight view of what matters, what changed, and what needs attention.",
+      "cadence": "Daily",
+      "triggers": [
+        "Morning digest cycle",
+        "New activity",
+        "Aging approvals"
+      ],
+      "inputs": [
+        "Teams messages",
+        "Email",
+        "GitHub activity",
+        "Review queue state"
+      ],
+      "outputs": [
+        "Daily digest",
+        "Cross-source insight summary",
+        "Urgency flags"
+      ],
+      "stakeholders": [
+        "Jen"
+      ],
+      "decisions": [
+        "What counts as signal",
+        "What deserves urgency"
+      ],
+      "painPoints": [
+        "High source volume",
+        "Noise versus signal",
+        "Context spread across systems"
+      ],
+      "humanRoleLeft": "Decide what to act on and what to ignore after the digest surfaces it.",
+      "tags": [
+        "monitor",
+        "tracking",
+        "signal",
+        "digest"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 3,
+      "coordinationLoad": 3,
+      "artifactStructure": 4,
+      "notes": "Good fit for monitoring and summarization.",
+      "leverage": {
+        "score": 56,
+        "band": "Medium",
+        "mode": "assist-first",
+        "recommendation": "Use AI to reduce prep, aggregation, and coordination load, but leave synthesis and decision framing with the human.",
+        "dimensions": {
+          "repeatability": 5,
+          "judgmentIntensity": 3,
+          "coordinationLoad": 3,
+          "artifactStructure": 4
+        }
+      }
+    }
+  ],
+  "agentOpportunities": [
+    {
+      "pattern": "Synthesis and Briefing",
+      "roleName": "Synthesis Partner",
+      "jobToBeDone": "Turn messy inputs into briefings, summaries, and decision-ready artifacts without losing the important nuance.",
+      "responsibilities": [
+        "KR 3.1 portfolio integration",
+        "Agentic Audience standup",
+        "Monthly AI transformation narrative",
+        "Task and accountability operations",
+        "Daily ops and triage"
+      ],
+      "outputs": [
+        "Status brief",
+        "Risk summary",
+        "Decision framing",
+        "Standup pre-read",
+        "Action-item tracker",
+        "Escalation notes"
+      ],
+      "humanReview": [
+        "Challenge weak logic, make tradeoffs, and approve external framing.",
+        "Facilitate the live conversation and decide where to push.",
+        "Own final narrative framing, audience judgment, and final polish."
+      ],
+      "leverageBands": [
+        "Medium",
+        "High",
+        "Low"
+      ]
+    }
+  ]
+}

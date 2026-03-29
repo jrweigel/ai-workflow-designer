@@ -1,0 +1,42 @@
+{
+  "person": {
+    "name": "",
+    "role": "",
+    "team": "",
+    "goal": "Understand my work and find AI leverage"
+  },
+  "summary": {
+    "jobInPlainEnglish": "",
+    "accountabilityAndOutcomes": "",
+    "workRhythms": "",
+    "recurringArtifacts": "",
+    "frictionMap": "",
+    "humanOnlyWork": "",
+    "aiLeveragePoints": "",
+    "topRecurringPatterns": []
+  },
+  "preferences": {
+    "includeAgentOpportunityMap": true,
+    "outputFormat": "markdown"
+  },
+  "responsibilities": [
+    {
+      "title": "",
+      "outcome": "",
+      "cadence": "",
+      "triggers": [],
+      "inputs": [],
+      "outputs": [],
+      "stakeholders": [],
+      "decisions": [],
+      "painPoints": [],
+      "humanRoleLeft": "",
+      "tags": [],
+      "repeatability": 3,
+      "judgmentIntensity": 3,
+      "coordinationLoad": 3,
+      "artifactStructure": 3,
+      "notes": ""
+    }
+  ]
+}

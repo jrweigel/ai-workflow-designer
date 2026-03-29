@@ -1,0 +1,308 @@
+{
+  "person": {
+    "name": "Jen Weigel",
+    "role": "Program manager and chief-of-staff style operator for AI enablement",
+    "team": "AI Enablement + Implementation",
+    "goal": "Understand my work and find AI leverage"
+  },
+  "summary": {
+    "jobInPlainEnglish": "I run a portfolio of AI enablement and transformation work that depends on synthesis, follow-through, and structured operating cadence. My time goes into collecting uneven inputs from many owners, turning them into useful views for leadership, and keeping cross-workstream commitments moving. The recurring work is highly pattern-based, but the judgment about what matters, what to escalate, and how to frame tradeoffs stays with me.",
+    "accountabilityAndOutcomes": "I am accountable for portfolio clarity, follow-through across multiple workstreams, and leadership-ready narratives about progress, blockers, and opportunities.",
+    "workRhythms": "My work is shaped by weekly standups, monthly aggregation cycles, recurring stakeholder updates, and ad hoc escalations when signals change.",
+    "recurringArtifacts": "I repeatedly create responsibility maps, status briefs, standup pre-reads, narrative updates, action-item trackers, and operating-model drafts.",
+    "frictionMap": "The drag comes from inconsistent updates, context switching across programs, having to restitch the same story from multiple sources, and manually tracking follow-through across owners.",
+    "humanOnlyWork": "I keep the final tradeoff calls, relationship management, escalation timing, leadership messaging, and design judgment for new models or frameworks.",
+    "aiLeveragePoints": "AI should do the first-pass aggregation, drafting, pattern detection, and workflow tracking. It should assist rather than decide when the work depends on persuasion, strategic tradeoffs, or organizational taste.",
+    "topRecurringPatterns": [
+      "Collect and normalize inconsistent updates",
+      "Turn scattered inputs into decision-ready artifacts",
+      "Monitor for drift, blockers, and stale commitments",
+      "Prepare for recurring meetings and operating cadences",
+      "Draft narratives for different audiences"
+    ]
+  },
+  "preferences": {
+    "goal": "full-audit",
+    "includeAgentOpportunityMap": true,
+    "outputFormat": "markdown"
+  },
+  "responsibilities": [
+    {
+      "title": "KR 3.1 portfolio integration",
+      "outcome": "Clear, current portfolio view with blockers, support needs, and credible impact signals.",
+      "cadence": "Weekly plus monthly aggregation cycle",
+      "triggers": [
+        "Monthly cycle start",
+        "Workflow owner updates",
+        "Leadership status asks"
+      ],
+      "inputs": [
+        "Workflow owner updates",
+        "Tracker documents",
+        "Standups",
+        "Pilot results"
+      ],
+      "outputs": [
+        "Status brief",
+        "Risk summary",
+        "Decision framing"
+      ],
+      "stakeholders": [
+        "Hans",
+        "Annie",
+        "Workflow owners"
+      ],
+      "decisions": [
+        "Continue or pivot decisions",
+        "Escalation timing"
+      ],
+      "painPoints": [
+        "Inconsistent update quality",
+        "Missing success measures",
+        "Needs repeated nudges"
+      ],
+      "humanRoleLeft": "Challenge weak logic, make tradeoffs, and approve external framing.",
+      "tags": [
+        "program",
+        "status",
+        "coordination",
+        "briefing",
+        "monitor"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 4,
+      "coordinationLoad": 5,
+      "artifactStructure": 4,
+      "notes": "Strong candidate for aggregation and monitoring assistance."
+    },
+    {
+      "title": "Agentic Audience standup",
+      "outcome": "Cross-workstream progress is visible and blockers surface before they stall momentum.",
+      "cadence": "Weekly recurring standup",
+      "triggers": [
+        "Monday standup cycle",
+        "Owner updates",
+        "Cross-workstream overlaps"
+      ],
+      "inputs": [
+        "Standup doc",
+        "Owner updates",
+        "Prior commitments"
+      ],
+      "outputs": [
+        "Standup pre-read",
+        "Action-item tracker",
+        "Escalation notes"
+      ],
+      "stakeholders": [
+        "Wendy",
+        "Workstream owners",
+        "Hans"
+      ],
+      "decisions": [
+        "What to challenge",
+        "What to escalate"
+      ],
+      "painPoints": [
+        "Repeated yellow status",
+        "Uneven updates",
+        "Commitments that do not advance"
+      ],
+      "humanRoleLeft": "Facilitate the live conversation and decide where to push.",
+      "tags": [
+        "meeting",
+        "coordination",
+        "follow-up",
+        "program"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 3,
+      "coordinationLoad": 5,
+      "artifactStructure": 4,
+      "notes": "Ideal for pre-read assembly and post-meeting carry-forward."
+    },
+    {
+      "title": "Monthly AI transformation narrative",
+      "outcome": "Leadership gets a crisp story about progress and the behaviors worth reinforcing.",
+      "cadence": "Monthly",
+      "triggers": [
+        "Monthly narrative cycle",
+        "Source syntheses ready",
+        "Leadership communication window"
+      ],
+      "inputs": [
+        "Meeting syntheses",
+        "Program data",
+        "Freeform notes"
+      ],
+      "outputs": [
+        "Leadership narrative",
+        "Talking points",
+        "Persona review notes"
+      ],
+      "stakeholders": [
+        "Annie",
+        "Hans",
+        "Yuri"
+      ],
+      "decisions": [
+        "What behaviors to highlight",
+        "What asks to include"
+      ],
+      "painPoints": [
+        "Need to combine disparate signals",
+        "Tone calibration across audiences",
+        "Tight polish window"
+      ],
+      "humanRoleLeft": "Own final narrative framing, audience judgment, and final polish.",
+      "tags": [
+        "narrative",
+        "briefing",
+        "stakeholder",
+        "communication"
+      ],
+      "repeatability": 4,
+      "judgmentIntensity": 5,
+      "coordinationLoad": 3,
+      "artifactStructure": 4,
+      "notes": "High-value drafting support, but never fully autonomous."
+    },
+    {
+      "title": "Cohort-based AI acceleration design",
+      "outcome": "A repeatable model exists for helping teams adopt AI in a structured way.",
+      "cadence": "Design phase with ad hoc working sessions",
+      "triggers": [
+        "Need for scalable alternative",
+        "Planning cycles",
+        "Readiness signals"
+      ],
+      "inputs": [
+        "Tiger team learnings",
+        "Maturity assessments",
+        "Capacity signals"
+      ],
+      "outputs": [
+        "Operating model draft",
+        "Intake criteria",
+        "Pilot plan"
+      ],
+      "stakeholders": [
+        "Hans",
+        "Wendy",
+        "Engineering partners"
+      ],
+      "decisions": [
+        "Model design",
+        "Scope and cohort selection"
+      ],
+      "painPoints": [
+        "No precedent",
+        "Need to balance breadth versus depth",
+        "High ambiguity"
+      ],
+      "humanRoleLeft": "Keep strategic design, selection criteria, and readiness calls human-led.",
+      "tags": [
+        "design",
+        "planning",
+        "strategy",
+        "model"
+      ],
+      "repeatability": 2,
+      "judgmentIntensity": 5,
+      "coordinationLoad": 3,
+      "artifactStructure": 2,
+      "notes": "Assist-first only during early design."
+    },
+    {
+      "title": "Task and accountability operations",
+      "outcome": "Nothing falls through the cracks and follow-through is visible across the portfolio.",
+      "cadence": "Daily and per-meeting",
+      "triggers": [
+        "New action items",
+        "Stale work",
+        "Standup cycle"
+      ],
+      "inputs": [
+        "Meeting notes",
+        "Quick captures",
+        "Project boards"
+      ],
+      "outputs": [
+        "Tracked issues",
+        "Overdue summaries",
+        "Follow-up nudges"
+      ],
+      "stakeholders": [
+        "Jen",
+        "Wendy",
+        "DRIs"
+      ],
+      "decisions": [
+        "Priority assignment",
+        "Where work belongs"
+      ],
+      "painPoints": [
+        "Vague ownership",
+        "Missing due dates",
+        "Manual status hygiene"
+      ],
+      "humanRoleLeft": "Approve creation, prioritize, and handle sensitive escalation moments.",
+      "tags": [
+        "ops",
+        "follow-up",
+        "tracking",
+        "coordination"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 2,
+      "coordinationLoad": 4,
+      "artifactStructure": 5,
+      "notes": "Best end-to-end automation candidate in the set."
+    },
+    {
+      "title": "Daily ops and triage",
+      "outcome": "The day starts with a tight view of what matters, what changed, and what needs attention.",
+      "cadence": "Daily",
+      "triggers": [
+        "Morning digest cycle",
+        "New activity",
+        "Aging approvals"
+      ],
+      "inputs": [
+        "Teams messages",
+        "Email",
+        "GitHub activity",
+        "Review queue state"
+      ],
+      "outputs": [
+        "Daily digest",
+        "Cross-source insight summary",
+        "Urgency flags"
+      ],
+      "stakeholders": [
+        "Jen"
+      ],
+      "decisions": [
+        "What counts as signal",
+        "What deserves urgency"
+      ],
+      "painPoints": [
+        "High source volume",
+        "Noise versus signal",
+        "Context spread across systems"
+      ],
+      "humanRoleLeft": "Decide what to act on and what to ignore after the digest surfaces it.",
+      "tags": [
+        "monitor",
+        "tracking",
+        "signal",
+        "digest"
+      ],
+      "repeatability": 5,
+      "judgmentIntensity": 3,
+      "coordinationLoad": 3,
+      "artifactStructure": 4,
+      "notes": "Good fit for monitoring and summarization."
+    }
+  ]
+}

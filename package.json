@@ -1,0 +1,32 @@
+{
+  "name": "ai-workflow-designer",
+  "version": "0.1.0",
+  "description": "Understand your work and find AI leverage. Interview-driven CLI and Copilot Chat agent that maps responsibilities, scores AI potential, and generates actionable prompts.",
+  "type": "module",
+  "bin": {
+    "ai-workflow-designer": "./cli.js"
+  },
+  "files": [
+    "cli.js",
+    "src/",
+    "content/",
+    "agent/workflow-designer.agent.md",
+    ".github/agents/workflow-designer.agent.md",
+    "GETTING_STARTED.md",
+    "README.md"
+  ],
+  "keywords": [
+    "ai",
+    "workflow",
+    "copilot",
+    "responsibility-map",
+    "prompt-pack",
+    "agent-design"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jeweigel/enablement-squad.git",
+    "directory": "packages/ai-workflow-designer"
+  },
+  "license": "MIT"
+}
