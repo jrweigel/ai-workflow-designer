@@ -32,7 +32,7 @@ You choose your goal upfront and only get the outputs that match:
 If you've never used VS Code or GitHub Copilot, start with [GETTING_STARTED.md](GETTING_STARTED.md) — it walks you through everything from installation to your first interview.
 
 ```
-git clone https://github.com/jeweigel/ai-workflow-designer.git
+git clone https://github.com/jrweigel/ai-workflow-designer.git
 cd ai-workflow-designer
 code .
 ```

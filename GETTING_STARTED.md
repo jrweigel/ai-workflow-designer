@@ -55,7 +55,7 @@ GitHub Copilot is the AI assistant that powers the interview. You'll need a GitH
 1. Open VS Code
 2. Press `Ctrl+Shift+P` (Windows) or `Cmd+Shift+P` (Mac) to open the **Command Palette**
 3. Type `Git: Clone` and select it
-4. Paste this URL: `https://github.com/jeweigel/ai-workflow-designer.git`
+4. Paste this URL: `https://github.com/jrweigel/ai-workflow-designer.git`
 5. Choose a folder on your computer to save it (your Documents folder is fine)
 6. When VS Code asks "Would you like to open the cloned repository?" — click **Open**
 
