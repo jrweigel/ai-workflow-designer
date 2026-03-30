@@ -4,7 +4,7 @@
   "description": "Understand your work and find AI leverage. Interview-driven CLI and Copilot Chat agent that maps responsibilities, scores AI potential, and generates actionable prompts.",
   "type": "module",
   "bin": {
-    "ai-workflow-designer": "./cli.js"
+    "ai-workflow-designer": "cli.js"
   },
   "files": [
     "cli.js",
@@ -25,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jrweigel/ai-workflow-designer.git"
+    "url": "git+https://github.com/jrweigel/ai-workflow-designer.git"
   },
   "license": "MIT"
 }
