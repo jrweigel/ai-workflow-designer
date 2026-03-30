@@ -201,6 +201,7 @@ export const workbookSchema = {
       jobInPlainEnglish: "",
       accountabilityAndOutcomes: "",
       workRhythms: "",
+      keyStakeholders: [],
       recurringArtifacts: "",
       frictionMap: "",
       humanOnlyWork: "",

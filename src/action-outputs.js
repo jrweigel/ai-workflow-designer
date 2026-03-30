@@ -198,6 +198,20 @@ export function generateCustomInstructions(session, scoredResponsibilities) {
   lines.push(`Never make final decisions about: ${humanWorkDescription}.`);
   lines.push("");
 
+  const stakeholders = summary?.keyStakeholders ?? [];
+  if (stakeholders.length) {
+    lines.push("Key stakeholders and what they care about:");
+    for (const s of stakeholders) {
+      if (typeof s === "string") {
+        lines.push(`- ${s}`);
+      } else if (s.name) {
+        lines.push(`- ${s.name}${s.role ? ` (${s.role})` : ""}${s.lens ? `: ${s.lens}` : ""}`);
+      }
+    }
+    lines.push("When drafting content for any of these people, match their lens.");
+    lines.push("");
+  }
+
   if (summary?.frictionMap) {
     lines.push(`Key friction to help reduce: ${summary.frictionMap}`);
     lines.push("");

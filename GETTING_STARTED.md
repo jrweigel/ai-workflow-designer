@@ -29,6 +29,8 @@ GitHub Copilot is the AI assistant that powers the interview. You'll need a GitH
 2. Click **Sign up** and follow the prompts
 3. Verify your email address
 
+> **Microsoft employees:** You already have a GitHub account through your Enterprise Managed User (EMU). Sign in with your `_microsoft` username (e.g., `yourname_microsoft`). If you haven't set this up yet, go to [https://repos.opensource.microsoft.com/link](https://repos.opensource.microsoft.com/link) to link your GitHub account, then follow the EMU setup instructions on the [Microsoft Open Source portal](https://docs.opensource.microsoft.com/tools/github/accounts/index.html). Your EMU account includes GitHub Copilot — skip the "Get GitHub Copilot" section below.
+
 ### Get GitHub Copilot
 
 1. Go to [https://github.com/features/copilot](https://github.com/features/copilot)

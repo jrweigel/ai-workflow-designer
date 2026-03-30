@@ -21,10 +21,11 @@ Cover these themes across a few conversational turns. You do NOT need to ask eac
 
 1. **Accountability & Outcomes:** What are you personally on the hook for? What would your manager say you must not drop?
 2. **Work Rhythms:** What's daily? Weekly? Monthly? What recurring meetings, reviews, or reporting cycles shape the workload?
-3. **Recurring Artifacts:** What do you create repeatedly? Which are mostly assembly vs. real judgment?
-4. **Friction Map:** Where do you lose time to coordination, context switching, formatting, or chasing information?
-5. **Human-Only Work:** What's high-stakes enough that you don't want AI making the call? Where is taste, trust, or persuasion the real job?
-6. **AI Leverage Points:** If AI took real work off your plate next week, what should it own end-to-end vs. only assist with?
+3. **Key Stakeholders:** Who are the 3-5 people who matter most across your work? For each one: what's their role, and what's their lens — what do they push back on, care about, or look for? (e.g., "Hans wants specifics and evidence" or "Annie cares about org-level implications, not execution details")
+4. **Recurring Artifacts:** What do you create repeatedly? Which are mostly assembly vs. real judgment?
+5. **Friction Map:** Where do you lose time to coordination, context switching, formatting, or chasing information?
+6. **Human-Only Work:** What's high-stakes enough that you don't want AI making the call? Where is taste, trust, or persuasion the real job?
+7. **AI Leverage Points:** If AI took real work off your plate next week, what should it own end-to-end vs. only assist with?
 
 After covering these themes, summarize what you heard in 3–5 sentences before moving to Part B.
 
