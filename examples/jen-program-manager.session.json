@@ -13,6 +13,8 @@
     "frictionMap": "The drag comes from inconsistent updates, context switching across programs, having to restitch the same story from multiple sources, and manually tracking follow-through across owners.",
     "humanOnlyWork": "I keep the final tradeoff calls, relationship management, escalation timing, leadership messaging, and design judgment for new models or frameworks.",
     "aiLeveragePoints": "AI should do the first-pass aggregation, drafting, pattern detection, and workflow tracking. It should assist rather than decide when the work depends on persuasion, strategic tradeoffs, or organizational taste.",
+    "knowledgeManagement": "I use a personal KB repo (this-is-fine) with a three-layer memory model: operating model, decisions, and process notes. Meeting notes get processed into structured formats. Decisions are logged with reasoning. But a lot still lives in scattered docs and my head.",
+    "whatStaysWithMe": "Final tradeoff calls, relationship management, escalation timing, leadership messaging tone, and design judgment for new models. The 'what matters' and 'how to frame it' stay human — the 'collect it and organize it' can move to AI.",
     "topRecurringPatterns": [
       "Collect and normalize inconsistent updates",
       "Turn scattered inputs into decision-ready artifacts",
@@ -73,6 +75,7 @@
       "judgmentIntensity": 4,
       "coordinationLoad": 5,
       "artifactStructure": 4,
+      "aiWorkflowPotential": "High — AI can aggregate updates across workflows and draft the status brief. I review, challenge weak logic, and own the escalation framing.",
       "notes": "Strong candidate for aggregation and monitoring assistance."
     },
     {
@@ -119,6 +122,7 @@
       "judgmentIntensity": 3,
       "coordinationLoad": 5,
       "artifactStructure": 4,
+      "aiWorkflowPotential": "",
       "notes": "Ideal for pre-read assembly and post-meeting carry-forward."
     },
     {
@@ -165,6 +169,7 @@
       "judgmentIntensity": 5,
       "coordinationLoad": 3,
       "artifactStructure": 4,
+      "aiWorkflowPotential": "Medium — AI drafts the narrative, but tone calibration and audience judgment stay with me.",
       "notes": "High-value drafting support, but never fully autonomous."
     },
     {
@@ -211,6 +216,7 @@
       "judgmentIntensity": 5,
       "coordinationLoad": 3,
       "artifactStructure": 2,
+      "aiWorkflowPotential": "",
       "notes": "Assist-first only during early design."
     },
     {
@@ -257,6 +263,7 @@
       "judgmentIntensity": 2,
       "coordinationLoad": 4,
       "artifactStructure": 5,
+      "aiWorkflowPotential": "High — this is the best candidate for end-to-end AI. Turn meeting notes into tracked issues, monitor for stale work, and nudge DRIs automatically.",
       "notes": "Best end-to-end automation candidate in the set."
     },
     {
@@ -302,6 +309,7 @@
       "judgmentIntensity": 3,
       "coordinationLoad": 3,
       "artifactStructure": 4,
+      "aiWorkflowPotential": "",
       "notes": "Good fit for monitoring and summarization."
     }
   ]

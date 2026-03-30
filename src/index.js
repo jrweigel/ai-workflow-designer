@@ -2,4 +2,4 @@ export { workbookSchema, createStarterSession } from "../content/workbook-schema
 export { generateOutputs } from "./generate.js";
 export { scoreResponsibilities, scoreResponsibility } from "./scoring.js";
 export { deriveWorkPatterns, deriveAgentOpportunities } from "./patterns.js";
-export { generatePromptPack, generateActionPlan, generateCustomInstructions } from "./action-outputs.js";
+export { generatePromptPack, generateActionPlan, generateCustomInstructions, generateSecondBrainSetup, generateOutputWalkthrough } from "./action-outputs.js";

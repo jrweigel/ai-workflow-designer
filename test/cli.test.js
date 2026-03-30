@@ -57,8 +57,10 @@ test("CLI init creates a valid starter session and generate emits output files",
     "ai-leverage-opportunities.md",
     "bucket-classification.md",
     "custom-ai-instructions.md",
+    "output-walkthrough.md",
     "prompt-pack.md",
     "responsibility-map.md",
+    "second-brain-setup.md",
     "session-summary.json",
     "work-pattern-summary.md"
   ]);
@@ -86,6 +88,7 @@ test("CLI generate with --goal understand limits output files", async () => {
   const files = (await readdir(outputDir)).sort();
   assert.deepEqual(files, [
     "bucket-classification.md",
+    "output-walkthrough.md",
     "responsibility-map.md",
     "session-summary.json",
     "work-pattern-summary.md"

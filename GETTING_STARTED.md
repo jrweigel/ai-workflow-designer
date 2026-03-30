@@ -2,9 +2,9 @@
 
 This guide is for people who may be new to VS Code and GitHub Copilot. It walks you through everything from installation to your first AI-powered workflow design session.
 
-**What you'll do:** Have a 15–25 minute guided conversation with an AI agent that maps your actual work and tells you where AI can help. You'll walk away with actionable outputs — prompts you can use immediately, a prioritized action plan, and custom AI instructions.
+**What you'll do:** Have a 60–90 minute deep guided conversation with an AI agent that maps your actual work and tells you where AI can help. You'll walk away with actionable outputs — prompts you can use immediately, a prioritized action plan, custom AI instructions, and a personalized guide for setting up your own second brain.
 
-**What you'll need:** A computer and about 30 minutes (including setup).
+**What you'll need:** A computer and about 90 minutes (including setup). The depth is the point — this isn't a speed run, it's a deep exercise in understanding how you actually work.
 
 ---
 
@@ -94,16 +94,16 @@ If you already have a VS Code workspace open:
 
 The interview has three parts:
 
-### Part A — Know Your Work (~5–10 minutes)
-The agent asks about your responsibilities, work rhythms, friction points, and where AI might help. Just talk naturally — it'll ask follow-up questions.
+### Part A — Know Your Work (~20–30 minutes)
+The agent asks about 8 themes: your responsibilities, work rhythms, recurring artifacts, friction points, human-only work, AI leverage points, key stakeholders, and how you manage knowledge and context today. For each theme, it probes deeper to surface the real patterns. Just talk naturally — it'll ask follow-up questions.
 
 **Example of what it might ask:**
 > "What are you personally on the hook for right now — the outcomes your manager would say you must not drop?"
 
 Just answer honestly in your own words. There are no wrong answers.
 
-### Part B — Map Responsibilities (~5–10 minutes)
-The agent proposes a structured view of each responsibility based on what you shared. It'll show you a draft and ask you to confirm or correct it.
+### Part B — Map Responsibilities (~20–30 minutes)
+The agent proposes a structured view of each responsibility based on what you shared. It'll show you a draft and ask you to confirm or correct it. For each one, it also captures an AI Workflow Potential assessment — your gut-check on how much AI could change how you do this work.
 
 **Example:**
 > "Here's what I captured for your first responsibility — does this look right?"
@@ -115,8 +115,8 @@ The agent proposes a structured view of each responsibility based on what you sh
 
 Correct anything that's off. The more accurate this is, the better your outputs will be.
 
-### Part C — Synthesis and Outputs (~2–3 minutes)
-The agent summarizes your work patterns, generates all your outputs, and walks you through them.
+### Part C — Synthesis and Outputs (~10–15 minutes)
+The agent summarizes your work patterns, asks what should always stay human, generates all your outputs, and then walks you through each one — what it is, how to use it, and the recommended sequence to get started.
 
 ## Step 6: Use Your Outputs
 
@@ -124,11 +124,13 @@ After the interview, you'll find your generated files in the `.ai-workflow-desig
 
 | Output | What to do with it |
 |--------|--------------------|
+| **Output Walkthrough** | Start here — it explains every output and gives you a recommended action sequence |
+| **3-Bucket Classification** | The fastest way to see the big picture — which work AI can own, assist with, or should leave alone |
 | **Prompt Pack** | Open it, copy any prompt, paste it into ChatGPT / Copilot / Claude / M365 Copilot and try it |
 | **AI Action Plan** | Your to-do list — start with the "This Week" items |
 | **Custom AI Instructions** | Copy the system prompt block and paste it into ChatGPT's custom instructions (Settings → Personalization → Custom instructions) or equivalent in your AI tool |
-| **Responsibility Map** | Keep this as your reference — it's the structured view of your work |
-| **3-Bucket Classification** | Share this with your manager or team to show where AI fits in your role |
+| **Second Brain Setup Guide** | Follow the getting-started steps to set up your personal knowledge repo or folder — for capturing decisions, meeting notes, and process knowledge |
+| **Responsibility Map** | Keep this as your reference — it's the structured view of your work with AI Workflow Potential scoring |
 
 ### Try a prompt right now
 
@@ -144,7 +146,7 @@ That's the fastest way to see the value.
 
 - **Edit and regenerate:** Your session is saved as `session.json`. Edit it any time and regenerate outputs to see updated results.
 - **Try different goals:** Re-run with `--goal full-audit` to see the agent opportunity map.
-- **Build a squad:** If you want to go further and design a full team of AI agents around your work, type `@squad-designer` in Copilot Chat — it picks up right where you left off.
+- **Build a squad:** If you want to go further and design a full team of AI agents around your work, install [agency-squad](https://github.com/gim-home/agency-squad) (`npx agency-squad setup`), then type `@squad-designer` in Copilot Chat — it picks up right where you left off.
 
 ## Troubleshooting
 
@@ -177,7 +179,7 @@ The interview runs through GitHub Copilot (which processes conversation through 
 Yes. Each person runs their own interview and gets their own outputs. The session files are portable — they can share them or keep them private.
 
 **How long does the interview take?**
-About 15–25 minutes for the conversation, plus a few minutes to review outputs.
+About 60–90 minutes for the conversation, plus a few minutes to review outputs. The depth is intentional — it produces much better results than a quick surface-level pass.
 
 **What if my work changes?**
 Re-run the interview. Edit your session file and regenerate, or start fresh. Your work evolves — your outputs should too.

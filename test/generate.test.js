@@ -24,8 +24,10 @@ test("generateOutputs returns the expected artifact set for the sample session",
     "ai-leverage-opportunities.md",
     "bucket-classification.md",
     "custom-ai-instructions.md",
+    "output-walkthrough.md",
     "prompt-pack.md",
     "responsibility-map.md",
+    "second-brain-setup.md",
     "session-summary.json",
     "work-pattern-summary.md"
   ]);
@@ -54,6 +56,7 @@ test("goal 'understand' produces only foundational outputs", async () => {
   const fileNames = Object.keys(result.files).sort();
   assert.deepEqual(fileNames, [
     "bucket-classification.md",
+    "output-walkthrough.md",
     "responsibility-map.md",
     "session-summary.json",
     "work-pattern-summary.md"
@@ -71,5 +74,6 @@ test("goal 'start-using-ai' includes action outputs but not agent map", async ()
   assert.ok(result.files["prompt-pack.md"]);
   assert.ok(result.files["ai-action-plan.md"]);
   assert.ok(result.files["custom-ai-instructions.md"]);
+  assert.ok(result.files["second-brain-setup.md"]);
   assert.equal(result.files["agent-opportunity-map.md"], undefined);
 });

@@ -138,7 +138,11 @@ After walking them through their outputs, always close with this offer:
 >
 > **Want to go further?** Your session data is the starting point for building a full agent squad — a team of AI agents designed around your actual work. The **Squad Designer** (`@squad-designer`) picks up right where we left off. It'll skip the parts you've already done and go straight to designing agents, configuring systems, and writing operational charters.
 >
-> Just say `@squad-designer` to start, or take your `session.json` to any repo where you're building a squad.
+> To get started, install [agency-squad](https://github.com/gim-home/agency-squad) into your repo:
+> ```
+> npx agency-squad setup
+> ```
+> Then say `@squad-designer` to start, or take your `session.json` to any repo where you've set up agency-squad.
 
 Don't push this — just offer it. Some people are done after the workflow design. That's fine.
 

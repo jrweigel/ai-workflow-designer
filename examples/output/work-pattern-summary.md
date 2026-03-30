@@ -12,6 +12,9 @@ The drag comes from inconsistent updates, context switching across programs, hav
 ## What Should Stay Human
 I keep the final tradeoff calls, relationship management, escalation timing, leadership messaging, and design judgment for new models or frameworks.
 
+## What Stays With Me
+Final tradeoff calls, relationship management, escalation timing, leadership messaging tone, and design judgment for new models. The 'what matters' and 'how to frame it' stay human — the 'collect it and organize it' can move to AI.
+
 ## Top Recurring Patterns
 - Synthesis and Briefing - shows up in KR 3.1 portfolio integration, Agentic Audience standup, Monthly AI transformation narrative, Task and accountability operations, Daily ops and triage
 - Monitoring and Signal Detection - shows up in KR 3.1 portfolio integration, Agentic Audience standup, Monthly AI transformation narrative, Task and accountability operations, Daily ops and triage

@@ -36,6 +36,22 @@ function inferCadenceWeight(cadence = "") {
   return 3;
 }
 
+function deriveAiWorkflowPotential(band, mode, responsibility) {
+  const explicit = (responsibility.aiWorkflowPotential ?? "").trim();
+  if (explicit) return explicit;
+
+  if (band === "High" && mode === "automate-or-delegate") {
+    return "High — AI can own this workflow end-to-end with a light approval gate.";
+  }
+  if (band === "High") {
+    return "High — AI handles drafting, assembly, and monitoring. You review and decide.";
+  }
+  if (band === "Medium") {
+    return "Medium — AI reduces prep and coordination load. You own synthesis and decisions.";
+  }
+  return "Low — Human-led. AI can assist with research, note cleanup, or structured prep.";
+}
+
 export function scoreResponsibility(responsibility) {
   const repeatability = clamp(
     Number(responsibility.repeatability) || inferCadenceWeight(responsibility.cadence),
@@ -87,6 +103,7 @@ export function scoreResponsibility(responsibility) {
     bucketLabel,
     mode,
     recommendation,
+    aiWorkflowPotential: deriveAiWorkflowPotential(band, mode, responsibility),
     dimensions: {
       repeatability,
       judgmentIntensity,

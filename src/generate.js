@@ -1,4 +1,4 @@
-import { generateActionPlan, generateCustomInstructions, generatePromptPack } from "./action-outputs.js";
+import { generateActionPlan, generateCustomInstructions, generateOutputWalkthrough, generatePromptPack, generateSecondBrainSetup } from "./action-outputs.js";
 import { deriveAgentOpportunities, deriveWorkPatterns } from "./patterns.js";
 import {
   renderAgentOpportunityMap,
@@ -35,7 +35,9 @@ export function generateOutputs(session) {
   const promptPack = generatePromptPack(session, scoredResponsibilities);
   const actionPlan = generateActionPlan(session, scoredResponsibilities);
   const customInstructions = generateCustomInstructions(session, scoredResponsibilities);
+  const secondBrainSetup = generateSecondBrainSetup(session, scoredResponsibilities);
   const agentMap = renderAgentOpportunityMap(agentOpportunities);
+  const outputWalkthrough = generateOutputWalkthrough(session, scoredResponsibilities, outputIds);
   const summaryJson = JSON.stringify(
     {
       person: session.person,
@@ -55,6 +57,7 @@ export function generateOutputs(session) {
     "prompt-pack": promptPack,
     "ai-action-plan": actionPlan,
     "custom-ai-instructions": customInstructions,
+    "second-brain-setup": secondBrainSetup,
     "agent-opportunity-map": agentMap
   };
 
@@ -74,10 +77,14 @@ export function generateOutputs(session) {
 
     files = {
       [`${personSlug}-workflow-design.md`]: combined,
+      "output-walkthrough.md": outputWalkthrough,
       "session-summary.json": summaryJson
     };
   } else {
-    files = { "session-summary.json": summaryJson };
+    files = {
+      "output-walkthrough.md": outputWalkthrough,
+      "session-summary.json": summaryJson
+    };
 
     for (const [id, content] of Object.entries(included)) {
       files[`${id}.md`] = content;
@@ -97,7 +104,9 @@ export function generateOutputs(session) {
       promptPack,
       actionPlan,
       customInstructions,
-      agentMap
+      secondBrainSetup,
+      agentMap,
+      outputWalkthrough
     }
   };
 }

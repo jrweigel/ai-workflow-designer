@@ -9,10 +9,13 @@
     "jobInPlainEnglish": "",
     "accountabilityAndOutcomes": "",
     "workRhythms": "",
+    "keyStakeholders": [],
     "recurringArtifacts": "",
     "frictionMap": "",
     "humanOnlyWork": "",
     "aiLeveragePoints": "",
+    "knowledgeManagement": "",
+    "whatStaysWithMe": "",
     "topRecurringPatterns": []
   },
   "preferences": {
@@ -36,6 +39,7 @@
       "judgmentIntensity": 3,
       "coordinationLoad": 3,
       "artifactStructure": 3,
+      "aiWorkflowPotential": "",
       "notes": ""
     }
   ]

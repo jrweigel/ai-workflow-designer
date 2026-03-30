@@ -18,10 +18,11 @@ export function renderResponsibilityMap(session, scoredResponsibilities) {
     responsibility.outputs,
     responsibility.painPoints,
     responsibility.humanRoleLeft,
-    `${responsibility.leverage.band} (${responsibility.leverage.score})`
+    `${responsibility.leverage.band} (${responsibility.leverage.score})`,
+    responsibility.leverage.aiWorkflowPotential
   ]);
 
-  return `# Responsibility Map\n\n${session.person.name} - ${session.person.role}\n\n| Responsibility | Outcome | Cadence | Output artifacts | Pain points | Human role left | AI leverage |\n|---|---|---|---|---|---|---|\n${rows
+  return `# Responsibility Map\n\n${session.person.name} - ${session.person.role}\n\n| Responsibility | Outcome | Cadence | Output artifacts | Pain points | Human role left | AI leverage | AI Workflow Potential |\n|---|---|---|---|---|---|---|---|\n${rows
     .map((row) => `| ${row.map((cell) => tableCell(cell)).join(" | ")} |`)
     .join("\n")}\n`;
 }
@@ -29,7 +30,7 @@ export function renderResponsibilityMap(session, scoredResponsibilities) {
 export function renderWorkPatternSummary(session, patterns) {
   const summary = session.summary;
 
-  return `# Personal Work Pattern Summary\n\n## Job In Plain English\n${summary.jobInPlainEnglish || "No summary provided yet."}\n\n## What Shapes The Work\n${summary.accountabilityAndOutcomes || "No accountability summary provided yet."}\n\n## Friction\n${summary.frictionMap || "No friction summary provided yet."}\n\n## What Should Stay Human\n${summary.humanOnlyWork || "No human-only constraints provided yet."}\n\n## Top Recurring Patterns\n${bullets(patterns.map((pattern) => `${pattern.title}${pattern.evidence.length ? ` - shows up in ${pattern.evidence.join(", ")}` : ""}`))}\n`;
+  return `# Personal Work Pattern Summary\n\n## Job In Plain English\n${summary.jobInPlainEnglish || "No summary provided yet."}\n\n## What Shapes The Work\n${summary.accountabilityAndOutcomes || "No accountability summary provided yet."}\n\n## Friction\n${summary.frictionMap || "No friction summary provided yet."}\n\n## What Should Stay Human\n${summary.humanOnlyWork || "No human-only constraints provided yet."}\n\n## What Stays With Me\n${summary.whatStaysWithMe || summary.humanOnlyWork || "No synthesis provided yet."}\n\n## Top Recurring Patterns\n${bullets(patterns.map((pattern) => `${pattern.title}${pattern.evidence.length ? ` - shows up in ${pattern.evidence.join(", ")}` : ""}`))}\n`;
 }
 
 export function renderAiLeverageOpportunities(scoredResponsibilities) {

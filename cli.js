@@ -46,7 +46,7 @@ async function run() {
     console.log("\nNext steps:");
     console.log("  1. Open this repo in VS Code with GitHub Copilot");
     console.log("  2. Open Copilot Chat and type: @workflow-designer");
-    console.log("  3. The interview will start — it takes about 15-25 minutes");
+    console.log("  3. The interview will start — it takes about 60-90 minutes");
     console.log("\nOr run the CLI directly:");
     console.log("  npx ai-workflow-designer init --output session.json");
     return;
