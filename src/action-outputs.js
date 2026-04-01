@@ -299,7 +299,7 @@ export function generateActionPlan(session, scoredResponsibilities) {
   lines.push("- **Set up custom instructions.** Use the Custom AI Instructions output to personalize your AI tools so they know your context.");
   lines.push("- **Consider agents.** If you have multiple Bucket 1 and 2 tasks that share inputs or cadences, the Agent Opportunity Map shows how they could cluster into dedicated AI agents with defined roles.");
   lines.push("- **Revisit quarterly.** Your work changes. Re-run this interview when your responsibilities shift, and your prompts and leverage map will update with it.");
-  lines.push("- **Set up your second brain.** Use the Second Brain Setup Guide to create a personal knowledge repo or folder that captures decisions, meeting takeaways, and process notes so nothing lives only in your head.");
+  lines.push("- **Set up your second brain.** Use the Second Brain Setup Guide to create your personal knowledge repo from the [Second Work Brain template](https://github.com/gim-home/second-work-brain-template) \u2014 it comes with Copilot instruction files, meeting recap workflows, and Monday briefings built in.");
 
   return lines.join("\n");
 }
@@ -311,7 +311,6 @@ export function generateSecondBrainSetup(session, scoredResponsibilities) {
 
   const bucket1 = scoredResponsibilities.filter((r) => r.leverage?.bucket === 1);
   const bucket2 = scoredResponsibilities.filter((r) => r.leverage?.bucket === 2);
-  const allOutputs = [...new Set(scoredResponsibilities.flatMap((r) => toArray(r.outputs)))];
   const hasLeadershipComms = scoredResponsibilities.some((r) =>
     toArray(r.tags).some((t) => ["narrative", "stakeholder", "communication", "briefing", "comms", "leadership"].includes(t.toLowerCase()))
   );
@@ -324,12 +323,13 @@ export function generateSecondBrainSetup(session, scoredResponsibilities) {
   const knowledgeContext = (summary?.knowledgeManagement ?? "").trim();
   const needsCollaboration = scoredResponsibilities.some((r) => (r.coordinationLoad ?? 0) >= 4);
   const useRepo = needsCollaboration || bucket1.length >= 2 || hasLeadershipComms;
+  const usesM365 = (summary?.m365Usage ?? "").trim();
 
   lines.push("# Second Brain Setup Guide");
   lines.push("");
   lines.push(`Personalized for ${person.name}${person.role ? ` — ${person.role}` : ""}`);
   lines.push("");
-  lines.push("Your second brain is the single place where your working knowledge lives — decisions you've made, things you've learned from meetings, process notes you'll need again, and the context AI needs to actually help you. Without it, every AI conversation starts from zero.");
+  lines.push("Your second brain is where AI meets your workflow — it captures meetings, tracks decisions, manages projects, and keeps you oriented across everything you're working on. Without it, every AI conversation starts from zero.");
   lines.push("");
 
   if (knowledgeContext) {
@@ -339,167 +339,245 @@ export function generateSecondBrainSetup(session, scoredResponsibilities) {
     lines.push("");
   }
 
+  // --- Recommended Setup: template-first for repo users ---
   lines.push("## Recommended Setup");
   lines.push("");
   if (useRepo) {
-    lines.push("**Use a Git repo** (GitHub, Azure DevOps, or local with `git init`).");
+    lines.push("**Use the [Second Work Brain template](https://github.com/gim-home/second-work-brain-template)** — a GitHub template repo pre-configured with GitHub Copilot instructions, project-based organization, and built-in workflows for meeting recaps, weekly briefings, and task tracking.");
     lines.push("");
-    lines.push("Why a repo for your work:");
-    lines.push("- You have high-coordination work that benefits from version history and structured files.");
-    lines.push("- AI tools (Copilot, Claude) work best when they can read a repo as context.");
-    lines.push("- You can share specific artifacts without sharing everything.");
+    lines.push("Why this template for your work:");
+    lines.push("- It's designed around how knowledge workers actually operate — projects, meetings, decisions, and contacts.");
+    lines.push("- GitHub Copilot reads the repo as context automatically. Instruction files in `.github/instructions/` tell Copilot your role, projects, stakeholders, and preferences.");
+    lines.push("- Built-in workflows like **Monday briefing** and **meeting recap** handle the repetitive synthesis your interview identified.");
+    if (usesM365) {
+      lines.push("- **WorkIQ MCP integration** connects Copilot to your Microsoft 365 data (email, calendar, Teams) — so your second brain can pull from the tools you already use.");
+    }
     if (bucket1.length >= 2) {
       lines.push("- Your automatable workflows can write directly to the repo as part of their output pipeline.");
     }
-  } else {
-    lines.push("**Start with a local folder** — you can always upgrade to a repo later.");
     lines.push("");
-    lines.push("Why a folder works for now:");
-    lines.push("- Your work is primarily individual — you don't need collaboration features yet.");
-    lines.push("- A folder is zero-setup. Create it today, start capturing immediately.");
-    lines.push("- If you later want version history or AI integration, `git init` converts it in one command.");
-  }
-
-  lines.push("");
-  lines.push("## Recommended Structure");
-  lines.push("");
-  lines.push("```");
-  if (useRepo) {
-    lines.push(`my-second-brain/              # or a name that works for you`);
+    lines.push("### How to get started");
+    lines.push("");
+    lines.push("1. Go to [github.com/gim-home/second-work-brain-template](https://github.com/gim-home/second-work-brain-template)");
+    lines.push('2. Click **"Use this template"** → **Create a new repository**');
+    lines.push("3. Name it something personal (e.g., `my-second-brain`, `work-brain`, your alias)");
+    lines.push("4. Clone it locally and open in VS Code");
+    lines.push('5. Say **"set up my second brain"** in Copilot Chat — the onboarding workflow will walk you through personalizing it');
+    lines.push("");
+    lines.push("> **No GitHub?** You can also clone the template locally: `git clone https://github.com/gim-home/second-work-brain-template.git my-second-brain`. Everything works except GitHub Issues — action items are tracked in files instead.");
   } else {
-    lines.push(`~/Documents/second-brain/     # or wherever you keep working files`);
-  }
-  lines.push("├── README.md                   # What this is, how you use it");
-  lines.push("├── context/");
-  lines.push("│   ├── operating-model.md      # How you work: cadences, stakeholders, boundaries");
-  lines.push("│   ├── decisions.md            # Decisions log: what you decided, why, when");
-  lines.push("│   └── stakeholders.md         # Key people, their lens, what they care about");
-
-  if (hasMeetingWork) {
-    lines.push("├── meetings/");
-    lines.push("│   ├── _processing-instructions.md  # How to extract value from meeting notes");
-    lines.push("│   └── (processed meeting notes)");
-  }
-
-  lines.push("├── process-notes/");
-  lines.push("│   └── (things you learned doing the work — patterns, lessons, templates)");
-
-  if (hasTracking) {
-    lines.push("├── tracking/");
-    lines.push("│   └── (action items, project status, follow-up lists)");
+    lines.push("**Start with the [Second Work Brain template](https://github.com/gim-home/second-work-brain-template)** — even as a local clone without a GitHub repo.");
+    lines.push("");
+    lines.push("Why the template works for you:");
+    lines.push("- Zero-design. The structure and Copilot instructions are already built.");
+    lines.push("- You can use it locally with just `git clone` — no GitHub account required.");
+    lines.push("- If you later want GitHub Issues, version history, or collaboration, push it to GitHub in one step.");
+    lines.push("");
+    lines.push("### How to get started");
+    lines.push("");
+    lines.push("```");
+    lines.push("git clone https://github.com/gim-home/second-work-brain-template.git my-second-brain");
+    lines.push("cd my-second-brain");
+    lines.push("code .");
+    lines.push("```");
+    lines.push("");
+    lines.push('Then say **"set up my second brain"** in Copilot Chat to personalize it.');
   }
 
-  if (hasLeadershipComms) {
-    lines.push("├── writing/");
-    lines.push("│   ├── _style-guide.md              # Your voice, tone, formatting preferences");
-    lines.push("│   └── (drafts, templates, past examples worth keeping)");
-  }
-
-  lines.push("├── prompts/");
-  lines.push("│   └── (your working prompt library — start with the Prompt Pack output)");
-  lines.push("└── .instructions.md            # Custom AI instructions (use the output from this session)");
+  lines.push("");
+  lines.push("## Template Structure");
+  lines.push("");
+  lines.push("The template organizes your work by **project**. Each project gets its own folder with subfolders for meetings, decisions, and resources. When you process a meeting summary, Copilot automatically routes the notes to the right project folder.");
+  lines.push("");
+  lines.push("```");
+  lines.push("my-second-brain/");
+  lines.push("├── .github/instructions/         # Copilot instruction files (customize these)");
+  lines.push("│   ├── copilot-instructions.md   # Core operating rules — your role, style, boundaries");
+  lines.push("│   ├── task.instructions.md       # Your work areas and task categories");
+  lines.push("│   ├── meetingrecap.instructions.md   # Strategic focus lenses for meeting processing");
+  lines.push("│   └── mondaybriefing.instructions.md # Key contacts, projects, Teams channels");
+  lines.push("├── projects/                      # One folder per active project");
+  lines.push("│   └── <project-name>/");
+  lines.push("│       ├── README.md              # Project overview, status, goals");
+  lines.push("│       ├── decisions/              # Project-specific decisions");
+  lines.push("│       ├── meetings/               # Meeting notes routed here automatically");
+  lines.push("│       └── resources/              # Links, docs, assets");
+  lines.push("├── background/                    # System-level memory and operating model");
+  lines.push("│   ├── operating-model.md         # How you work: cadences, stakeholders, boundaries");
+  lines.push("│   ├── decisions.md               # Cross-project decisions");
+  lines.push("│   └── current.md                 # Recent activity and working memory");
+  lines.push("├── contacts/                      # Person-centric notes and working relationships");
+  lines.push("├── reviews/                       # Weekly and monthly review summaries");
+  lines.push("├── inbox/                         # Staging area for unprocessed notes");
+  lines.push("└── archive/                       # Completed or inactive items");
   lines.push("```");
 
   lines.push("");
-  lines.push("## What Goes Where");
+  lines.push("## Map Your Interview Outputs to the Template");
   lines.push("");
-
-  lines.push("### context/ — Your operating model");
+  lines.push("Here's where each output from this session goes in your second brain:");
   lines.push("");
-  lines.push("This is the foundation. When AI reads your repo, this is the first thing it should understand.");
-  lines.push("");
-  lines.push("**operating-model.md** should contain:");
-  lines.push(`- Your role: ${person.role || "(fill in)"}`);
-  lines.push(`- Your key accountabilities (from Part A of your interview)`);
-  lines.push(`- Your work rhythms: what's daily, weekly, monthly`);
-  lines.push(`- What stays human: ${summary?.humanOnlyWork || "(fill in from your interview)"}`);
-  lines.push("");
-  lines.push("**decisions.md** is your decision log. Every time you make a call that you might need to reference later:");
-  lines.push("- What was decided");
-  lines.push("- Why (the reasoning, not just the outcome)");
-  lines.push("- When");
-  lines.push("- Any exceptions or conditions");
-  lines.push("");
+  lines.push("| Output from this session | Where it goes in the template |");
+  lines.push("|---|---|");
+  lines.push("| **Custom AI Instructions** | Merge into `.github/instructions/copilot-instructions.md` — this replaces the generic system prompt with your personalized one |");
+  lines.push("| **Work Pattern Summary** | Copy to `background/operating-model.md` — this is the foundation Copilot reads first |");
+  lines.push("| **Prompt Pack** | Keep in your outputs folder or copy favorites into the repo as reusable prompts |");
+  lines.push("| **AI Action Plan** | Reference it as you build habits — it doesn't need to live in the repo |");
 
   const stakeholders = toArray(summary?.keyStakeholders);
   if (stakeholders.length) {
-    lines.push("**stakeholders.md** should capture your key stakeholders and their lens:");
+    lines.push("| **Stakeholder context** | Create a file in `contacts/` for each key stakeholder with their lens and preferences |");
+  }
+
+  lines.push("");
+
+  // --- Personalize instruction files ---
+  lines.push("## Personalize the Instruction Files");
+  lines.push("");
+  lines.push("The template includes four instruction files in `.github/instructions/` that control how Copilot works with your second brain. Personalize them with context from your interview:");
+  lines.push("");
+
+  lines.push("### copilot-instructions.md");
+  lines.push("");
+  lines.push("This is the core system prompt. Update it with:");
+  lines.push(`- Your role: ${person.role || "(fill in)"}`);
+  if (summary?.jobInPlainEnglish) {
+    lines.push(`- Your job in plain English: ${summary.jobInPlainEnglish}`);
+  }
+  lines.push(`- What stays human: ${summary?.humanOnlyWork || "(fill in from your interview)"}`);
+  lines.push("");
+
+  if (hasMeetingWork) {
+    lines.push("### meetingrecap.instructions.md");
     lines.push("");
+    lines.push("Update with your strategic focus lenses — the things you're looking for in every meeting:");
+
+    const patterns = summary?.topRecurringPatterns ?? [];
+    if (patterns.length) {
+      for (const p of patterns) {
+        lines.push(`- ${p}`);
+      }
+    } else {
+      lines.push("- Decisions made and their reasoning");
+      lines.push("- Action items and owners");
+      lines.push("- Open questions and blockers");
+    }
+    lines.push("");
+  }
+
+  lines.push("### mondaybriefing.instructions.md");
+  lines.push("");
+  lines.push("Update with:");
+  if (stakeholders.length) {
+    lines.push("- Your key contacts:");
     for (const s of stakeholders) {
       if (typeof s === "string") {
-        lines.push(`- **${s}**`);
+        lines.push(`  - **${s}**`);
       } else if (s.name) {
-        lines.push(`- **${s.name}**${s.role ? ` (${s.role})` : ""}${s.lens ? ` — ${s.lens}` : ""}`);
+        lines.push(`  - **${s.name}**${s.role ? ` (${s.role})` : ""}${s.lens ? ` — ${s.lens}` : ""}`);
+      }
+    }
+  }
+  lines.push("- Your active projects and their status");
+  lines.push("- Teams channels you monitor");
+  lines.push("");
+
+  lines.push("### task.instructions.md");
+  lines.push("");
+  lines.push("Update with your work areas and how tasks should be categorized. Based on your interview, your key areas include:");
+
+  const areas = [...new Set(scoredResponsibilities.flatMap((r) => toArray(r.tags)))].slice(0, 6);
+  if (areas.length) {
+    for (const a of areas) {
+      lines.push(`- ${a}`);
+    }
+  } else {
+    lines.push("- (Add your work areas from the responsibility map)");
+  }
+  lines.push("");
+
+  // --- Built-in workflows matched to responsibilities ---
+  lines.push("## Built-In Workflows");
+  lines.push("");
+  lines.push("The template comes with workflows you can trigger from Copilot Chat. Based on your interview, here are the ones most relevant to your work:");
+  lines.push("");
+
+  if (hasMeetingWork) {
+    lines.push('### Meeting Recap — Say "process meeting summary"');
+    lines.push("");
+    lines.push("Converts meeting notes into durable context updates, decision records, and GitHub Issues for action items. Notes are automatically routed to the right project folder.");
+
+    const meetingResponsibilities = scoredResponsibilities.filter((r) =>
+      toArray(r.tags).some((t) => ["meeting", "standup", "agenda", "recap"].includes(t.toLowerCase()))
+    );
+    if (meetingResponsibilities.length) {
+      lines.push("");
+      lines.push("This directly supports your meeting-related work:");
+      for (const r of meetingResponsibilities) {
+        lines.push(`- **${r.title}**${r.leverage?.recommendation ? ` — ${r.leverage.recommendation}` : ""}`);
       }
     }
     lines.push("");
-    lines.push("When AI drafts anything for a specific audience, it should reference this file.");
+  }
+
+  lines.push('### Monday Briefing — Say "Monday briefing" or "start the week"');
+  lines.push("");
+  lines.push("Pulls together:");
+  lines.push("- Last week's key meetings and decisions");
+  lines.push("- This week's calendar and prep needs");
+  lines.push("- Open GitHub Issues and project status");
+  lines.push("- Recommended priorities");
+  if (usesM365) {
+    lines.push("");
+    lines.push("With WorkIQ connected, this pulls directly from your M365 calendar and email — no manual input needed.");
+  }
+  lines.push("");
+
+  if (hasTracking) {
+    lines.push('### Session Wrap — Say "wrap this session"');
+    lines.push("");
+    lines.push("Captures key insights from an AI working session into your second brain so context isn't lost between conversations.");
     lines.push("");
   }
 
-  if (hasMeetingWork) {
-    lines.push("### meetings/ — Processed meeting intelligence");
-    lines.push("");
-    lines.push("Don't dump raw transcripts here. Process each meeting into structured notes.");
-    lines.push("");
-    lines.push("**_processing-instructions.md** tells AI how to extract value from your meetings. Include:");
-    lines.push("- What to extract: decisions, action items, open questions, strategic ideas, status changes");
-    lines.push("- Where action items go (your tracking folder, a project board, etc.)");
-    lines.push("- How to handle decisions (add to decisions.md)");
-    lines.push("- What to flag for your attention vs. what to file and forget");
-    lines.push("");
-  }
-
-  if (hasLeadershipComms) {
-    lines.push("### writing/ — Your voice and style");
-    lines.push("");
-    lines.push("**_style-guide.md** captures how you write so AI drafts match your voice:");
-    lines.push("- Preferred tone (direct? diplomatic? data-driven?)");
-    lines.push("- Formatting patterns (headers, bullets, tables — what you default to)");
-    lines.push("- Words/phrases you use vs. avoid");
-    lines.push("- Examples of past writing you're proud of");
-    lines.push("");
-    lines.push("Keep 2-3 past examples of good outputs (a narrative, a status update, a decision brief) so AI can match your style, not just your instructions.");
-    lines.push("");
-  }
-
-  lines.push("### prompts/ — Your working prompt library");
-  lines.push("");
-  lines.push("Start by copying the prompts from your Prompt Pack output into this folder. As you use and refine them, save the improved versions here. Over time this becomes your personal toolkit.");
-  lines.push("");
-
-  lines.push("## Custom AI Instructions");
-  lines.push("");
-  lines.push("Copy the **Custom AI Instructions** output from this session into `.instructions.md` at the root of your second brain. This file tells any AI tool that reads your repo who you are, what you do, and how to help you.");
-  lines.push("");
-  lines.push("If you use multiple AI tools:");
-  lines.push("- **GitHub Copilot / VS Code:** The `.instructions.md` file is read automatically when you open the folder.");
-  lines.push("- **ChatGPT:** Paste the system prompt section into Settings → Personalization → Custom Instructions.");
-  lines.push("- **Claude:** Paste into your Project's custom instructions or use it as a system prompt in the API.");
-  lines.push("- **M365 Copilot:** Reference key context in your prompt or use Copilot Pages to maintain persistent context.");
-  lines.push("");
-
+  // --- Getting started with the template ---
   lines.push("## Getting Started (Today)");
   lines.push("");
   if (useRepo) {
-    lines.push("1. **Create the repo.** `mkdir my-second-brain && cd my-second-brain && git init` (or create on GitHub).");
+    lines.push('1. **Create your repo from the template.** Click "Use this template" on [github.com/gim-home/second-work-brain-template](https://github.com/gim-home/second-work-brain-template).');
   } else {
-    lines.push("1. **Create the folder.** `mkdir ~/Documents/second-brain` (or wherever you keep working files).");
+    lines.push("1. **Clone the template.** `git clone https://github.com/gim-home/second-work-brain-template.git my-second-brain`");
   }
-  lines.push("2. **Create the structure above.** Copy the folder tree — empty folders are fine to start.");
-  lines.push("3. **Write operating-model.md first.** Use your interview answers from Part A as the starting draft — they're already structured.");
-  lines.push("4. **Copy in your outputs.** Move the Custom AI Instructions to `.instructions.md`, Prompt Pack to `prompts/`, and keep your session JSON for reference.");
-  lines.push("5. **Start capturing.** After your next meeting, process the notes using the structure above. After your next decision, log it. The habit matters more than perfection.");
+  lines.push("2. **Open in VS Code.** Make sure you have the GitHub Copilot extension and Node.js v18+ installed.");
+  lines.push('3. **Run onboarding.** Say **"set up my second brain"** in Copilot Chat. It will walk you through personalizing the system.');
+  lines.push("4. **Copy in your outputs.** Merge Custom AI Instructions into `.github/instructions/copilot-instructions.md`, and copy your Work Pattern Summary into `background/operating-model.md`.");
+
+  const projectNames = [...new Set(scoredResponsibilities.flatMap((r) => toArray(r.tags).filter((t) => !["meeting", "standup", "agenda", "recap", "tracking", "monitor", "ops", "follow-up", "program", "narrative", "stakeholder", "communication", "briefing", "comms", "leadership"].includes(t.toLowerCase()))))].slice(0, 3);
+  if (projectNames.length) {
+    lines.push(`5. **Create your first projects.** Say "create a new project" for each major work area. Based on your interview: ${projectNames.join(", ")}.`);
+  } else {
+    lines.push('5. **Create your first project.** Say "create a new project" and Copilot will scaffold the folder structure for you.');
+  }
+  lines.push('6. **Try a workflow.** After your next meeting, say "process meeting summary" and see the notes get routed to the right project folder.');
   lines.push("");
+
+  if (usesM365) {
+    lines.push("### Connect Microsoft 365");
+    lines.push("");
+    lines.push("The template includes a pre-configured WorkIQ MCP server (`.vscode/mcp.json`) that connects Copilot to your M365 data — email, calendar, Teams messages, and documents. This is what powers the Monday briefing and meeting recap workflows.");
+    lines.push("");
+    lines.push("When you open the repo in VS Code, it will prompt you to authorize the WorkIQ connection. Once connected, Copilot can pull meeting details, recent emails, and Teams activity directly into your workflows.");
+    lines.push("");
+  }
 
   lines.push("## Growing Your Second Brain");
   lines.push("");
   lines.push("Your second brain gets more valuable as it accumulates context. The key habits:");
   lines.push("");
-  lines.push("- **After every meeting:** Process notes into structured format (decisions, actions, open questions).");
-  lines.push("- **After every decision:** Log it in decisions.md — even small ones. Future-you will thank current-you.");
-  lines.push("- **After every friction moment:** Note what went wrong in process-notes/. These become your improvement backlog.");
-  lines.push("- **Monthly:** Review and prune. Remove stale items, promote useful patterns, update your operating model if your work has changed.");
+  lines.push('- **After every meeting:** Say "process meeting summary" — decisions, actions, and context updates are captured automatically.');
+  lines.push("- **After every decision:** Log it in the relevant project's `decisions/` folder, or in `background/decisions.md` for cross-project decisions.");
+  lines.push("- **Start each week:** Say \"Monday briefing\" to get oriented — it synthesizes your calendar, open issues, and recent activity.");
+  lines.push("- **Monthly:** Check `reviews/` for patterns. Update your operating model if your work has changed.");
   lines.push("");
   if (useRepo) {
     lines.push("When you're ready to go further, this repo structure is the foundation for building a full agent squad — AI agents designed around your work patterns that read this repo as their context. But that's optional. A well-maintained second brain is powerful on its own.");
@@ -587,8 +665,8 @@ export function generateOutputWalkthrough(session, scoredResponsibilities, outpu
     {
       id: "second-brain-setup",
       title: "Second Brain Setup Guide",
-      what: "A personalized guide for creating your own knowledge management system — folder structure, what goes where, custom AI instructions for processing meetings and decisions, and whether to use a repo or local folder.",
-      howToUse: "Follow the Getting Started section today. Create the structure, copy in your outputs, and start the capture habit with your next meeting or decision.",
+      what: "A personalized guide for setting up your second brain using the Second Work Brain template \u2014 project-based organization, Copilot instruction files to personalize, built-in workflows (Monday briefing, meeting recap, session management), and a mapping of your interview outputs into the template structure.",
+      howToUse: "Follow the Getting Started section today. Create your repo from the template, run the onboarding workflow, and copy in your interview outputs. The guide shows exactly which instruction files to personalize and which workflows match your work.",
       format: "second-brain-setup.md"
     },
     {

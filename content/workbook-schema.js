@@ -114,7 +114,7 @@ export const workbookSchema = {
     },
     {      id: "second-brain-setup",
       title: "Second Brain Setup Guide",
-      description: "A personalized guide for setting up your own knowledge management repo or folder — with recommended structure, custom instructions for processing meetings, decisions, tasks, and writing style, and a recommendation for online repo vs. local folder."
+      description: "A personalized guide for setting up your second brain using the Second Work Brain template — with project-based organization, Copilot instruction files, built-in workflows (Monday briefing, meeting recap), and guidance for mapping your interview outputs into the template structure."
     },
     {      id: "agent-opportunity-map",
       title: "Agent Opportunity Map",
@@ -212,7 +212,9 @@ export const workbookSchema = {
           probes: [
             "Do you have a system for capturing decisions, open questions, and process notes — or does it live in your head and scattered docs?",
             "When you need to find something you learned or decided three weeks ago, where do you look?",
-            "What types of information do you wish you could find faster — decisions, meeting outcomes, task context, stakeholder preferences, writing examples?"
+            "What types of information do you wish you could find faster — decisions, meeting outcomes, task context, stakeholder preferences, writing examples?",
+            "How much of your information flow runs through Microsoft 365 — Outlook email, Teams messages, calendar invites, SharePoint/OneDrive docs?",
+            "Do you use GitHub today — for code, issues, project tracking, or anything else?"
           ],
           responseType: "long-text"
         }
@@ -272,6 +274,7 @@ export const workbookSchema = {
       humanOnlyWork: "",
       aiLeveragePoints: "",
       knowledgeManagement: "",
+      m365Usage: "",
       whatStaysWithMe: "",
       topRecurringPatterns: []
     },

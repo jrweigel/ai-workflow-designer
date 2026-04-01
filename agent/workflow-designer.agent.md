@@ -41,7 +41,7 @@ Cover these themes across several conversational turns. Group related questions 
    - Probes: Who are the people whose reaction matters most when you produce something? For each person, what do they typically push back on? (Be specific — "too vague" is useful, "might not like it" is not.) Do any of your outputs go to leadership or cross-team audiences?
 
 8. **Knowledge & Context Management:** How do you currently capture and organize what you learn — decisions, meeting takeaways, process notes, strategic thinking?
-   - Probes: Do you have a system for capturing decisions, open questions, and process notes — or does it live in your head and scattered docs? When you need to find something you learned or decided three weeks ago, where do you look? What types of information do you wish you could find faster?
+   - Probes: Do you have a system for capturing decisions, open questions, and process notes — or does it live in your head and scattered docs? When you need to find something you learned or decided three weeks ago, where do you look? What types of information do you wish you could find faster? How much of your information flow runs through Microsoft 365 — Outlook email, Teams messages, calendar invites, SharePoint/OneDrive docs? Do you use GitHub today — for code, issues, project tracking, or anything else?
 
 After covering these themes, summarize what you heard in 3-5 sentences before moving to Part B.
 
@@ -107,6 +107,7 @@ When the interview is complete (or at natural save points), write the structured
     "humanOnlyWork": "",
     "aiLeveragePoints": "",
     "knowledgeManagement": "",
+    "m365Usage": "",
     "whatStaysWithMe": "",
     "topRecurringPatterns": []
   },
@@ -157,7 +158,7 @@ Then open `.ai-workflow-designer/output/output-walkthrough.md` and walk the pers
 2. **Responsibility Map** — The full structured inventory with AI Workflow Potential scoring.
 3. **Prompt Pack** — Pick one Bucket 1 prompt and encourage them to try it right now.
 4. **Custom AI Instructions** — Show them how to paste this into their AI tool of choice.
-5. **Second Brain Setup Guide** — Walk through the recommended structure and getting-started steps.
+5. **Second Brain Setup Guide** — Walk through how the Second Work Brain template maps to their work and which instruction files to personalize first.
 6. **AI Action Plan** — The prioritized week-by-week implementation guide.
 7. **Agent Opportunity Map** — Only if they chose "full audit" and are interested.
 
